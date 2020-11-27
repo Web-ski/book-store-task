@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import './Book.css';
 
 const BookBox = ({ book }) => {
+  const [Book, setBook] = useState(book);
 
   console.log(book)
 

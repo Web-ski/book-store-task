@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
+import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
 import './App.css';
-import BookBox from './BookBox';
+import Home from './Home';
+import Basket from './Basket';
 const axios = require('axios');
 
 function App() {
@@ -14,17 +16,24 @@ function App() {
       .catch(error =>
         console.log(error)
       )
-
   }, [])
 
 
   return (
     <div className="App">
-      <div className="page__header">
-        <h1 className="page__title">Books Storage</h1>
-        <button className="basket__button">Koszyk</button>
-      </div>
-      {(data.data !== undefined && ((data.data).map(item => (<BookBox key={item.id} book={item} />))))}
+      <BrowserRouter>
+        <Switch>
+          <Route exact path="/">
+            <Home books={data} />
+          </Route>
+          <Route path="/koszyk">
+            <Basket />
+          </Route>
+          <Route path="/formularz">
+            
+          </Route>
+        </Switch>
+      </BrowserRouter >
     </div>
   );
 }
