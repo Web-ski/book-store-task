@@ -1,5 +1,29 @@
 .App {
   text-align: center;
+  background-color: aliceblue;
+  margin-top: 0;
+  width: 100vw;
+}
+
+.page__title {
+  margin: 0;
+  padding: 40px;
+}
+
+.page__header {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.basket__button {
+  width: 100px;
+  max-height: 50px;
+  background-color: white;
+  border: solid 2px red;
+  padding: 10px;
+  margin: 10px 0;
 }
 
 .App-logo {
