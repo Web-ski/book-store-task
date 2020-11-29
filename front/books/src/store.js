@@ -1,10 +1,10 @@
 import { createStore } from 'redux';
+import bookReducer from './reducer';
 
-const bookReducer = (state, action) => {
 
-  return {
 
-  }
-}
 
-export const store = createStore(bookReducer);
+export const store = createStore(
+  bookReducer, 
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+  );

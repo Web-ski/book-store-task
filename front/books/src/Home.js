@@ -1,14 +1,15 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
+import { connect } from "react-redux";
 
 import BookBox from './BookBox';
 
-const Home = ({ books }) => {
-  const [basket, setBasket] = useState(0);
+const Home = ({ books, ...props }) => {
+
 
   return <>
     <div className="page__header">
-      <p className="basket__storage">Pozycji w koszyku: {basket}</p>
+      <p className="basket__storage">Pozycji w koszyku: {props.basketStatus}</p>
       <Link to="/koszyk" className="basket__button">Koszyk</Link>
     </div>
     <h1 className="page__title">Books Storage</h1>
@@ -16,4 +17,9 @@ const Home = ({ books }) => {
   </>
 }
 
-export default Home;
+const mapStateToProps = state => ({
+  //basketStatus: console.log(state)
+  basketStatus: state.number
+})
+
+export default connect(mapStateToProps)(Home);
