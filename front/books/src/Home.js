@@ -9,7 +9,7 @@ const Home = ({ books, ...props }) => {
 
   return <>
     <div className="page__header">
-      <p className="basket__storage">Pozycji w koszyku: {props.basketStatus}</p>
+      <p className="basket__storage">Pozycji w koszyku: {props.basketNumber}</p>
       <Link to="/koszyk" className="basket__button">Koszyk</Link>
     </div>
     <h1 className="page__title">Books Storage</h1>
@@ -18,8 +18,8 @@ const Home = ({ books, ...props }) => {
 }
 
 const mapStateToProps = state => ({
-  //basketStatus: console.log(state)
-  basketStatus: state.number
+  basketNumber: console.log(state),
+  basketNumber: state.number
 })
 
 export default connect(mapStateToProps)(Home);

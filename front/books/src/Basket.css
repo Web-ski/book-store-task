@@ -1,0 +1,28 @@
+.basket {
+  min-height: 100vh;
+}
+
+.basket__table {
+  margin: 0 auto;
+}
+
+table, th, td {
+  border: 1px solid lightgrey;
+  border-collapse: collapse;
+}
+
+td {
+  padding: 10px;
+  text-align: left;
+}
+
+th {
+  padding: 10px;
+}
+
+tr:nth-child(even) {
+  background-color: #eee;
+}
+tr:nth-child(odd) {
+  background-color: #fff;
+}

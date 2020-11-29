@@ -1,5 +1,6 @@
 const initialState = {
-  number: 0
+  number: 0,
+  books: []
 }
 
 const bookReducer = (state = initialState, {type, payload}) => {
@@ -7,7 +8,8 @@ const bookReducer = (state = initialState, {type, payload}) => {
   if (type === 'ADD_BOOK') {
     return {
       ...state, 
-      number: state.number + 1
+      number: state.number + 1,
+      books: [...state.books, payload.book]
     }
   }
 
