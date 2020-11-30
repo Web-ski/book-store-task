@@ -30,7 +30,14 @@
 
 .book__button {
   background-color: white;
-  border: solid 2px red;
+  border: solid 2px royalblue;
+  color: rgb(47, 84, 196);
   padding: 10px;
   margin: 10px 0;
+}
+
+.book__button:hover {
+  color: white;
+  background-color: royalblue;
+  border: solid 2px royalblue;
 }
