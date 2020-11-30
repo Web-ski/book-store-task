@@ -5,15 +5,24 @@ const initialState = {
 
 const bookReducer = (state = initialState, {type, payload}) => {
 
-  if (type === 'ADD_BOOK') {
-    return {
-      ...state, 
-      number: state.number + 1,
-      books: [...state.books, payload.book]
+  switch(type) {
+    case 'ADD_BOOK': {
+      return {
+        ...state, 
+        number: state.number + 1,
+        books: [...state.books, payload.book]
+      }
     }
+    case 'REMOVE_ALL_BOOKS': {
+      return {
+        ...state, 
+        number: 0,
+        books: []
+      }
+    }
+    default:
+      return state
   }
-
-  return state
 }
 
 export default bookReducer;

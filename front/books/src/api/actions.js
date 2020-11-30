@@ -7,4 +7,13 @@ const addBookAction = data => {
   }
 }
 
-export default addBookAction;
+const resetBookAction = () => {
+  return {
+    type: 'REMOVE_ALL_BOOKS',
+    payload: { 
+      book: [] 
+    }
+  }
+}
+
+export {addBookAction, resetBookAction};

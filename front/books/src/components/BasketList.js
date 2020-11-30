@@ -1,4 +1,7 @@
 import React, { useState, useEffect } from "react";
+import { connect } from 'react-redux';
+import {resetBookAction} from '../api/actions';
+
 import ListElem from './ListElems';
 
 const BasketList = ({ elems, ...props }) => {
@@ -44,11 +47,17 @@ const BasketList = ({ elems, ...props }) => {
           <td></td>
           <td></td>
           <td className="table__price"><p>Łącznie: </p>{price},<span>{cents}</span> PLN</td>
-          <td className="table__btn"><button>Usuń wszystko</button></td>
+          <td className="table__btn"><button onClick={() => props.removeAllBooks()}>Usuń wszystko</button></td>
         </tr>
       </tfoot>
     </table>
   )
 }
 
-export default BasketList;
+const mapDispatchToProps = dispatch => {
+  return {
+    removeAllBooks: () => dispatch(resetBookAction())
+  }
+}
+
+export default connect(null, mapDispatchToProps)(BasketList);
