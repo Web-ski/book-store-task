@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
-import BasketList from './BasketList';
-import './App.css';
+import BasketList from '../components/BasketList';
+import '../App.css';
 import './Basket.css';
 
 const Basket = (props) => {

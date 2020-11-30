@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { connect } from 'react-redux';
-import addBookAction from './actions';
+import addBookAction from '../api/actions';
 import './Book.css';
 
 const BookBox = ({ book, ...props }) => {

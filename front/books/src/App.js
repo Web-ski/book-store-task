@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
 import './App.css';
-import Home from './Home';
-import Basket from './Basket';
+import Home from './pages/Home';
+import Basket from './pages/Basket';
 const axios = require('axios');
 
 function App() {

@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 
-import BookBox from './BookBox';
+import BookBox from '../components/BookBox';
 
 const Home = ({ books, ...props }) => {
 
