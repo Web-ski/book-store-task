@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import BasketList from '../components/BasketList';
@@ -8,8 +8,7 @@ import './Basket.css';
 const Basket = (props) => {
 
   const titleZero = <h2 className="page__title">Nie wybrałeś jeszcze żadnej książki.</h2>
-  const titleArr = <h2 className="page__title">Wybrane pozycje: {props.basketStatusElems}</h2>
-
+  const titleArr = <h2 className="page__title">Wybrane pozycje:</h2>
 
   return <section className="basket">
     <div className="page__header">

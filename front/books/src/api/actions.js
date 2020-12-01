@@ -16,4 +16,13 @@ const resetBookAction = () => {
   }
 }
 
-export {addBookAction, resetBookAction};
+const removeBookAction = numberof => {
+  return {
+    type: 'REMOVE_BOOK',
+    payload: { 
+      book: numberof
+    }
+  }
+}
+
+export {addBookAction, resetBookAction, removeBookAction};

@@ -6,7 +6,6 @@ import BookBox from '../components/BookBox';
 
 const Home = ({ books, ...props }) => {
 
-
   return <>
     <div className="page__header">
       <p className="basket__storage">Pozycji w koszyku: {props.basketNumber}</p>
@@ -18,7 +17,6 @@ const Home = ({ books, ...props }) => {
 }
 
 const mapStateToProps = state => ({
-  basketNumber: console.log(state),
   basketNumber: state.number
 })
 

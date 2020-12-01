@@ -13,11 +13,9 @@ const BasketList = ({ elems, ...props }) => {
     let sum = 0;
     elems.map(item => {
       sum = sum + item.price;
-      console.log(sum)
     });
     setSum(sum);
 
-    console.log(sum)
     let stringifyPrice = (sum.toString()).split("");
     stringifyPrice.length = stringifyPrice.length - 2;  
     setPrice(stringifyPrice);
