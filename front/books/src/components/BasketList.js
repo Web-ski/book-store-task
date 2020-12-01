@@ -5,25 +5,28 @@ import {resetBookAction} from '../api/actions';
 import ListElem from './ListElems';
 
 const BasketList = ({ elems, ...props }) => {
-  const [sum, setSum] = useState(0);
-  const [price, setPrice] = useState(0);
-  const [cents, setCents] = useState(0);
 
-  useEffect(() => {
+  const addPrice = (collection) => {
     let sum = 0;
-    elems.map(item => {
+    collection.map(item => {
       sum = sum + item.price;
     });
-    setSum(sum);
 
     let stringifyPrice = (sum.toString()).split("");
     stringifyPrice.length = stringifyPrice.length - 2;  
-    setPrice(stringifyPrice);
+    return stringifyPrice;
+  }
 
-    let stringifyPrice2 = (sum.toString()).split("");
-    let cents = stringifyPrice2.slice(-2);    
-    setCents(cents);
-  }, [])
+  const addCents = (collection) => {
+    let sum = 0;
+    collection.map(item => {
+      sum = sum + item.price;
+    });
+
+    let stringifyPrice = (sum.toString()).split("");
+    let cents = stringifyPrice.slice(-2);    
+    return cents;
+  }
 
   return (
     <table className="basket__table">
@@ -44,7 +47,7 @@ const BasketList = ({ elems, ...props }) => {
           <td></td>
           <td></td>
           <td></td>
-          <td className="table__price"><p>Łącznie: </p>{price},<span>{cents}</span> PLN</td>
+          <td className="table__price"><p>Łącznie: </p>{addPrice(props.basketElems)},<span>{addCents(props.basketElems)}</span> PLN</td>
           <td className="table__btn"><button onClick={() => props.removeAllBooks()}>Usuń wszystko</button></td>
         </tr>
       </tfoot>
@@ -52,10 +55,14 @@ const BasketList = ({ elems, ...props }) => {
   )
 }
 
+const mapStateToProps = state => ({
+  basketElems: state.books
+})
+
 const mapDispatchToProps = dispatch => {
   return {
     removeAllBooks: () => dispatch(resetBookAction())
   }
 }
 
-export default connect(null, mapDispatchToProps)(BasketList);
+export default connect(mapStateToProps, mapDispatchToProps)(BasketList);
