@@ -25,4 +25,13 @@ const removeBookAction = numberof => {
   }
 }
 
-export {addBookAction, resetBookAction, removeBookAction};
+const addOrderAction = data => {
+  return {
+    type: 'ADD_ORDER',
+    payload: {
+      order: data
+    }
+  }
+}
+
+export {addBookAction, resetBookAction, removeBookAction, addOrderAction};

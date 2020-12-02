@@ -27,6 +27,12 @@ const bookReducer = (state = initialState, { type, payload }) => {
         number: state.books.length - 1
       }
     }
+    case 'ADD_ORDER': {
+      return {
+        ...state,
+        order: payload.order
+      }
+    }
     default:
       return state
   }
