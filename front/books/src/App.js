@@ -3,6 +3,7 @@ import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
 import './App.css';
 import Home from './pages/Home';
 import Basket from './pages/Basket';
+import Transaction from './pages/Transaction';
 const axios = require('axios');
 
 function App() {
@@ -29,8 +30,8 @@ function App() {
           <Route path="/koszyk">
             <Basket />
           </Route>
-          <Route path="/formularz">
-            
+          <Route path="/transakcja">
+            <Transaction />
           </Route>
         </Switch>
       </BrowserRouter >

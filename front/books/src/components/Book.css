@@ -1,6 +1,7 @@
 .book__box {
   display: flex;
   flex-direction: row;
+  justify-content: stretch;
   background-color: white;
   width: 90vw;
   max-width: 600px;
@@ -17,8 +18,9 @@
   padding: 0 20px;
   display: flex;
   flex-direction: column;
-  justify-content: start;
-  align-items: flex-start;
+  justify-content: space-between;
+  align-items: stretch;
+  width: 100%;
 }
 
 .book__title,
@@ -28,16 +30,21 @@
   text-align: left;
 }
 
+.book__btn-box {
+  width: 100%;
+  text-align: right;
+}
+
 .book__button {
-  background-color: white;
-  border: solid 2px royalblue;
-  color: rgb(47, 84, 196);
+  color: white;
+  background-color: royalblue;
+  border: solid 1px royalblue;
   padding: 10px;
   margin: 10px 0;
 }
 
 .book__button:hover {
-  color: white;
-  background-color: royalblue;
-  border: solid 2px royalblue;
+  background-color: white;
+  border: solid 1px royalblue;
+  color: rgb(47, 84, 196);
 }

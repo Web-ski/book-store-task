@@ -62,3 +62,10 @@ tfood tr td {
 .table__btn p {
   margin: 0;
 }
+
+.btn__article {
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

@@ -1,6 +1,6 @@
 .App {
   text-align: center;
-  background-color: aliceblue;
+  background-color: #eee;
   margin-top: 0;
   max-width: 100vw;
   padding-top: 100px;
@@ -22,24 +22,24 @@
   position: fixed;
   top: 0;
   left: 0;
-  background-color: aliceblue;
+  background-color: #eee;
 }
 
 .basket__button {
   max-height: 50px;
   width: max-content;
-  background-color: white;
-  border: solid 2px royalblue;
-  color: rgb(47, 84, 196);
+  background-color: royalblue;
+  border: solid 1px royalblue;
+  color: white;
   padding: 10px;
   margin: 10px 20px 10px 0;
   text-decoration: none;
 }
 
 .basket__button:hover {
-  background-color: royalblue;
-  border: solid 2px royalblue;
-  color: white;
+  background-color: white;
+  border: solid 1px royalblue;
+  color: rgb(47, 84, 196);
   text-decoration: none;
 }
 

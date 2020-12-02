@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { connect } from 'react-redux';
-import {addBookAction} from '../api/actions';
+import { addBookAction } from '../api/actions';
 import './Book.css';
 
 const BookBox = ({ book, ...props }) => {
@@ -12,7 +12,9 @@ const BookBox = ({ book, ...props }) => {
         <h3 className="book__title">{book.title}</h3>
         <h4 className="book__author">{book.author}</h4>
         <p className="book__pages">Stron: {book.pages}</p>
-        <button onClick={() => props.addBookToBasket(book)} className="book__button">Dodaj do koszyka</button>
+        <div className="book__btn-box">
+          <button onClick={() => props.addBookToBasket(book)} className="book__button">Dodaj do koszyka</button>
+        </div>
       </div>
     </article>
   )
