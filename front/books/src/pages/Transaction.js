@@ -29,11 +29,12 @@ const Transaction = (props) => {
     </div>
     <h1 className="page__title">Twoje zamówienie</h1>
     <article>
-      <div className="order">
+      {props.orderElems !== undefined && <div className="order">
         <p>Wybranych pozycji: {addQuantity(props.orderElems)}</p>
-        <p>Kwota do zapłaty: {cleanPrice(addPrice(props.orderElems))},<span>{cleanCents(addPrice(props.orderElems))}</span> PLN</p>
-      </div>
-      <Form />
+        <p>Kwota do zapłaty: {cleanPrice(addPrice(props.orderElems))},
+          <span>{cleanCents(addPrice(props.orderElems))}</span> PLN</p>
+      </div>}
+      {props.orderElems !== undefined ? <Form /> : <h1 className="page__title">Zamówienie zostało zrealizowane.</h1>}
     </article>
   </section>
 }
