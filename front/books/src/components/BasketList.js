@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { connect } from 'react-redux';
 import {resetBookAction} from '../api/actions';
+import { cleanPrice, cleanCents } from '../accessors';
 
 import ListElem from './ListElems';
 
@@ -12,9 +13,7 @@ const BasketList = ({ elems, ...props }) => {
       sum = sum + item.price;
     });
 
-    let stringifyPrice = (sum.toString()).split("");
-    stringifyPrice.length = stringifyPrice.length - 2;  
-    return stringifyPrice;
+    return cleanPrice(sum)
   }
 
   const addCents = (collection) => {
@@ -22,10 +21,8 @@ const BasketList = ({ elems, ...props }) => {
     collection.map(item => {
       sum = sum + item.price;
     });
-
-    let stringifyPrice = (sum.toString()).split("");
-    let cents = stringifyPrice.slice(-2);    
-    return cents;
+  
+    return cleanCents(sum);
   }
 
   return (

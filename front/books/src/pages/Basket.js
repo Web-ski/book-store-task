@@ -9,8 +9,7 @@ import './Basket.css';
 const Basket = (props) => {
 
   const prepareOrder = (data) => {
-    let orderArr = [];
-    let i;
+
     class Order {
       constructor(id, quantity, price) {
         this.id = id;
@@ -18,11 +17,17 @@ const Basket = (props) => {
         this.price = price;
       }
     }
-
-
-    //zwiększenie quantity dla tożsamych id
+    
+    let orderArr = [];
+    data.map(elem => {
+      let findTwins = data.filter(item => item.id === elem.id, 0)
+      let checkTwins = orderArr.find( i => i.id === elem.id) 
+      return (checkTwins === undefined 
+        && orderArr.push(new Order(elem.id, findTwins.length, (elem.price * findTwins.length))))
+    })
 
     console.log(orderArr)
+
     return orderArr;
   }
 
@@ -47,7 +52,7 @@ const Basket = (props) => {
 }
 
 const mapStateToProps = state => ({
-  basketStatus: console.log(state.books),
+  basketStatus: console.log(state.order),
   elemsNumber: state.number,
   basketElems: state.books
 })

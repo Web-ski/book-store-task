@@ -1,10 +1,27 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
-import {resetBookAction} from '../api/actions';
+import { resetBookAction } from '../api/actions';
+import { cleanPrice, cleanCents } from '../accessors';
 import Form from '../components/Form';
 
 const Transaction = (props) => {
+
+  const addQuantity = (collection) => {
+    if(collection !== undefined) {
+
+      let quantity = collection.reduce((acc, q) => acc + q.quantity, 0);
+      return quantity;
+    }
+  }
+
+  const addPrice = (collection) => {
+    if(collection !== undefined) {
+
+      let price = collection.reduce((acc, p) => acc + p.price, 0);
+      return price;
+    }
+  }
 
   return <section className="transaction">
     <div className="page__header">
@@ -13,8 +30,8 @@ const Transaction = (props) => {
     <h1 className="page__title">Twoje zamówienie</h1>
     <article>
       <div className="order">
-        <p>Wybranych pozycji: </p>
-        <p>Kwota: </p>
+        <p>Wybranych pozycji: {addQuantity(props.orderElems)}</p>
+        <p>Kwota do zapłaty: {cleanPrice(addPrice(props.orderElems))},<span>{cleanCents(addPrice(props.orderElems))}</span> PLN</p>
       </div>
       <Form />
     </article>
@@ -22,7 +39,8 @@ const Transaction = (props) => {
 }
 
 const mapStateToProps = state => ({
-  basketElems: state.order
+  orderStatus: console.log(state.order),
+  orderElems: state.order
 })
 
 const mapDispatchToProps = dispatch => {
