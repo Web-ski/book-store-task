@@ -11,10 +11,9 @@ const Basket = (props) => {
   const prepareOrder = (data) => {
 
     class Order {
-      constructor(id, quantity, price) {
+      constructor(id, quantity) {
         this.id = id;
         this.quantity = quantity;
-        this.price = price;
       }
     }
     
@@ -23,10 +22,8 @@ const Basket = (props) => {
       let findTwins = data.filter(item => item.id === elem.id, 0)
       let checkTwins = orderArr.find( i => i.id === elem.id) 
       return (checkTwins === undefined 
-        && orderArr.push(new Order(elem.id, findTwins.length, (elem.price * findTwins.length))))
+        && orderArr.push(new Order(elem.id, findTwins.length)))
     })
-
-    console.log(orderArr)
 
     return orderArr;
   }
@@ -52,7 +49,7 @@ const Basket = (props) => {
 }
 
 const mapStateToProps = state => ({
-  basketStatus: console.log(state.order),
+  basketStatus: console.log(state.books),
   elemsNumber: state.number,
   basketElems: state.books
 })

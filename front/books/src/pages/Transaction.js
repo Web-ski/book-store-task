@@ -31,8 +31,8 @@ const Transaction = (props) => {
     <article>
       {props.orderElems !== undefined && <div className="order">
         <p>Wybranych pozycji: {addQuantity(props.orderElems)}</p>
-        <p>Kwota do zapłaty: {cleanPrice(addPrice(props.orderElems))},
-          <span>{cleanCents(addPrice(props.orderElems))}</span> PLN</p>
+        <p>Kwota do zapłaty: {cleanPrice(addPrice(props.orderPrice))},
+          <span>{cleanCents(addPrice(props.orderPrice))}</span> PLN</p>
       </div>}
       {props.orderElems !== undefined ? <Form /> : <h1 className="page__title">Zamówienie zostało zrealizowane.</h1>}
     </article>
@@ -40,8 +40,9 @@ const Transaction = (props) => {
 }
 
 const mapStateToProps = state => ({
-  orderStatus: console.log(state.order),
-  orderElems: state.order
+  orderStatus: console.log(state.books),
+  orderElems: state.order,
+  orderPrice: state.books
 })
 
 const mapDispatchToProps = dispatch => {
