@@ -1,10 +1,14 @@
+# Rozwiązanie
+Rozwiązaniem poniższego zadania jest aplikacja _books_ umieszczona w folderze _front_
+Uruchamia się ją przy pomocy komendy ```yarn start```
+
 # Zadanie rekrutacyjne
 Zadanie rekrutacyjne polega na napisaniu programu, który ma przedstawiać proces
  zakupowy książek (pobieranie danych o książkach z API, dodawanie i usuwanie
  produktów z koszyka, wypełnienie formularza danymi osobowymi potrzebnymi do
  realizacji zamówienia).
 
-Rozwiązanie zadania należy umieścić w folderze _front_.
+Rozwiązanie zadania należy umieścić w folderze _front_. 
 ### Aplikacja powinna składać się z 3 podstron:
 #### 1. Strona główna
 ###### Lista funkcjonalności składająca się z:
