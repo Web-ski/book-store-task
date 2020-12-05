@@ -33,7 +33,7 @@ const BasketList = ({ elems, ...props }) => {
           <th>Tytuł</th>
           <th>Autorzy</th>
           <th>Cena</th>
-          <th>Usuń</th>
+          <th>Akcja</th>
         </tr>
       </thead>
       <tbody>

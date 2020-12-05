@@ -30,7 +30,7 @@ const Basket = (props) => {
 
   const titleZero = <h2 className="page__title">Nie wybrałeś jeszcze żadnej książki.</h2>
   const titleArr = <h2 className="page__title">Wybrane pozycje:</h2>
-  const btnNextStep = <Link to="/transakcja" onClick={() => props.addOrder(prepareOrder(props.basketElems))} className="basket__button">Dalej</Link>
+  const btnNextStep = <Link to="/transakcja" onClick={() => props.addOrder(prepareOrder(props.basketElems))} className="book__button">Dalej</Link>
 
   return <section className="basket">
     <div className="page__header">
@@ -38,7 +38,7 @@ const Basket = (props) => {
     </div>
     <h1 className="page__title">Twój Koszyk</h1>
     <article>
-      <h2 className="page__title">Pozycji w koszyku: {props.elemsNumber}</h2>
+      <h2 className="page__subtitle">Pozycji w koszyku: {props.elemsNumber}</h2>
       {(props.basketElems).length === 0 ? titleZero : titleArr}
       {(props.basketElems).length !== 0 && <BasketList elems={props.basketElems} />}
     </article>

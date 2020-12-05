@@ -13,7 +13,7 @@ const BookBox = ({ book, ...props }) => {
         <h4 className="book__author">{book.author}</h4>
         <p className="book__pages">Stron: {book.pages}</p>
         <div className="book__btn-box">
-          <button onClick={() => props.addBookToBasket(book)} className="book__button">Dodaj do koszyka</button>
+          <button onClick={() => props.addBookToBasket(book)} className="book__button">+ Dodaj do koszyka</button>
         </div>
       </div>
     </article>

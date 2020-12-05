@@ -1,15 +1,33 @@
 .App {
   text-align: center;
-  background-color: #eee;
   margin-top: 0;
   max-width: 100vw;
   padding-top: 100px;
 }
 
-.page__title {
+.wrapper {
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  max-width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  z-index: -1;
+  background-image: linear-gradient(to right top, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1);
+}
+
+.page__title, .page__subtitle {
   margin-top: 0;
   padding: 40px;
   padding-top: 0;
+  color: white;
+  font-family: Roboto;
+  font-weight: 900;
+  text-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+}
+
+.page__subtitle {
+  color: #444;
 }
 
 .page__header {
@@ -17,30 +35,41 @@
   max-width: 100vw;
   height: 80px;
   display: flex;
-  justify-content: end;
+  flex-direction: row;
+  justify-content: flex-end;
   align-items: center;
   position: fixed;
   top: 0;
   left: 0;
-  background-color: #eee;
+}
+
+.page__header p {
+  font-family: Roboto;
+  font-weight: bold;
+  color: #444;  
 }
 
 .basket__button {
-  max-height: 50px;
-  width: max-content;
-  background-color: royalblue;
-  border: solid 1px royalblue;
-  color: white;
-  padding: 10px;
-  margin: 10px 20px 10px 0;
+  font-family: Roboto;
   text-decoration: none;
+  color: white;
+  background-image: radial-gradient(ellipse at 40%, rgba(209, 107, 165, 1) 20%, rgba(209, 107, 165, 0.8));
+  box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.3);
+  border: solid 1px rgba(107, 202, 209, 0.2);
+  outline: none;
+  padding: 20px 25px;
+  margin: 10px 20px 10px 0;
+  border-radius: 8px;
+  color: white;
+  font-family: Roboto;
+  font-weight: bold;
+  text-transform: uppercase;
 }
 
 .basket__button:hover {
   background-color: white;
-  border: solid 1px royalblue;
-  color: rgb(47, 84, 196);
   text-decoration: none;
+  background-image: radial-gradient(ellipse at 30%, rgb(0, 111, 163), rgba(0, 111, 163, .8));
 }
 
 .basket__storage {
@@ -80,6 +109,7 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }

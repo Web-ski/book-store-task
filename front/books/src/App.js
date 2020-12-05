@@ -22,6 +22,8 @@ function App() {
 
   return (
     <div className="App">
+      <div className="wrapper">
+      </div>
       <BrowserRouter>
         <Switch>
           <Route exact path="/">
@@ -35,6 +37,7 @@ function App() {
           </Route>
         </Switch>
       </BrowserRouter >
+
     </div>
   );
 }
